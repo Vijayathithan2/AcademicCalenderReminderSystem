@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academic Calendar Alert System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1><i class="fas fa-calendar-alt"></i> Academic Calendar Alert System</h1>
+      <nav>
+        <button id="adminBtn" class="nav-btn">Admin</button>
+        <button id="studentBtn" class="nav-btn">Student</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Admin Section -->
+    <section id="adminSection" class="section hidden">
+      <h2>Admin - Manage Events</h2>
+      <div class="form-grid">
+        <input id="eventTitle" placeholder="Event Title">
+        <input id="eventDate" type="datetime-local">
+        <input id="alertBefore" placeholder="Alert before (hours)" type="number" min="0">
+        <textarea id="eventDesc" placeholder="Description"></textarea>
+        <button id="createEventBtn">Create Event</button>
+      </div>
+      <div id="adminEventsList"></div>
+    </section>
+
+    <!-- Student Section -->
+    <section id="studentSection" class="section hidden">
+      <h2>Student - Subscribe</h2>
+      <div class="form-grid">
+        <input id="stuName" placeholder="Full Name">
+        <input id="stuEmail" placeholder="Email">
+        <button id="stuRegisterBtn">Register & Subscribe</button>
+      </div>
+      <h3>Upcoming Events</h3>
+      <div id="eventsList"></div>
+    </section>
+  </main>
+
+  <div id="message" class="message hidden"></div>
+  <script src="script.js"></script>
+</body>
+</html>
